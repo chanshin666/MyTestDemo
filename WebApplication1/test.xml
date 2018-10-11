@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset>
+  
+    <url>
+      <loc>http://www.xxxxx.com/todaydetials.aspx?id=1000888</loc>
+      
+        <data>
+          
+            <display>
+              <website>爱购114</website>
+              <siteurl>http://www.xxxxx.com/</siteurl>
+              <city>广东</city>
+              <webSitetitle>商品1</webSitetitle>
+              <image>http://211.155.235.30/tuangou/Upload/SpecIcon/这是商品图</image>
+              <startTime>2017/12/26</startTime>
+              <endTime>2017/12/31</endTime>
+              <value>120</value>
+              <price>100</price>
+              <rebate>20</rebate>
+              <bought>10000</bought>
+            </display>
+          
+        </data>
+      
+    </url>
+  
+</urlset>
