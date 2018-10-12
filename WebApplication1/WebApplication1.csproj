@@ -202,6 +202,7 @@
     <Content Include="Images\25.jpg" />
     <Content Include="Images\26.jpg" />
     <Content Include="JsonToBase64.aspx" />
+    <Content Include="JXNULoginTest.aspx" />
     <Content Include="O2SComponentsPDF.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -479,6 +480,13 @@
     <Compile Include="JsonToBase64.aspx.designer.cs">
       <DependentUpon>JsonToBase64.aspx</DependentUpon>
     </Compile>
+    <Compile Include="JXNULoginTest.aspx.cs">
+      <DependentUpon>JXNULoginTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="JXNULoginTest.aspx.designer.cs">
+      <DependentUpon>JXNULoginTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ImgUploadRes.cs" />
     <Compile Include="Models\Users.cs" />
@@ -541,6 +549,7 @@
     <Compile Include="UserXml.aspx.designer.cs">
       <DependentUpon>UserXml.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utility\WebHelper.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
