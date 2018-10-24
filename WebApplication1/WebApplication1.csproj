@@ -198,6 +198,7 @@
     <Content Include="example2.aspx" />
     <Content Include="FileUpload.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GetFileMd5.aspx" />
     <Content Include="Images\24.jpg" />
     <Content Include="Images\25.jpg" />
     <Content Include="Images\26.jpg" />
@@ -219,7 +220,16 @@
     <Content Include="Scripts\echarts.min.js" />
     <Content Include="Scripts\html2canvas.js" />
     <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\layer\layer.js" />
+    <Content Include="Scripts\layer\skin\default\icon-ext.png" />
+    <Content Include="Scripts\layer\skin\default\icon.png" />
+    <Content Include="Scripts\layer\skin\default\loading-0.gif" />
+    <Content Include="Scripts\layer\skin\default\loading-1.gif" />
+    <Content Include="Scripts\layer\skin\default\loading-2.gif" />
+    <Content Include="Scripts\layer\skin\layer.css" />
+    <Content Include="Scripts\TestAPIMethod.js" />
     <Content Include="SwitchButton.aspx" />
+    <Content Include="TestAPIMethod.aspx" />
     <Content Include="ThumbnailImgBuild.aspx" />
     <Content Include="Upload\DrawingPngImage\test.png" />
     <Content Include="UserXml.aspx" />
@@ -261,7 +271,9 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
@@ -470,6 +482,13 @@
     <Compile Include="FileUpload.aspx.designer.cs">
       <DependentUpon>FileUpload.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GetFileMd5.aspx.cs">
+      <DependentUpon>GetFileMd5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetFileMd5.aspx.designer.cs">
+      <DependentUpon>GetFileMd5.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -534,6 +553,13 @@
     </Compile>
     <Compile Include="SwitchButton.aspx.designer.cs">
       <DependentUpon>SwitchButton.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestAPIMethod.aspx.cs">
+      <DependentUpon>TestAPIMethod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestAPIMethod.aspx.designer.cs">
+      <DependentUpon>TestAPIMethod.aspx</DependentUpon>
     </Compile>
     <Compile Include="ThumbnailImgBuild.aspx.cs">
       <DependentUpon>ThumbnailImgBuild.aspx</DependentUpon>
