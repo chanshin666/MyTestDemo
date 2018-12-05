@@ -184,6 +184,7 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="BeginInvoke.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\amazeui.css" />
     <Content Include="Content\amazeui.min.css" />
@@ -215,6 +216,7 @@
     <Content Include="Scripts\12306.js" />
     <Content Include="Scripts\amazeui.js" />
     <Content Include="Scripts\amazeui.min.js" />
+    <Content Include="Scripts\BeginInvoke.js" />
     <Content Include="Scripts\echarts-gl.js" />
     <Content Include="Scripts\echarts-gl.min.js" />
     <Content Include="Scripts\echarts.min.js" />
@@ -419,6 +421,13 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="BeginInvoke.aspx.cs">
+      <DependentUpon>BeginInvoke.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BeginInvoke.aspx.designer.cs">
+      <DependentUpon>BeginInvoke.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

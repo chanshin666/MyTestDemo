@@ -1,8 +1,10 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Threading;
 using System.Web;
 
 namespace WebApplication1
@@ -12,7 +14,7 @@ namespace WebApplication1
     /// </summary>
     public class ajax : IHttpHandler
     {
-
+        private static Logger logger = LogManager.GetCurrentClassLogger(); //初始化日志类
         public void ProcessRequest(HttpContext context)
         {
             //context.Response.ContentType = "text/plain";
@@ -25,6 +27,9 @@ namespace WebApplication1
                 {
                     case "GetValidateImg":
                         GetValidateImg(context);
+                        break;
+                    case "ASyncInvoke":
+                        ASyncInvoke();
                         break;
                 }
             }
@@ -64,6 +69,28 @@ namespace WebApplication1
                 context.Response.BinaryWrite(bytes.ToArray());
             }
             #endregion
+        }
+
+        private void ASyncInvoke()
+        {
+
+            Action<int, string, string> action = Execut;
+            IAsyncResult iResult = action.BeginInvoke(100, "sfndlasgnfdklsgjmds", "1.jpg", (callback) => { logger.Trace("上传完成了"); action.EndInvoke(callback); }, null);
+
+            HttpContext.Current.Response.Write("{\"Msg\":\"" + DateTime.Now.ToString() + " 按钮已经执行完毕\"}");
+            HttpContext.Current.Response.End();
+        }
+
+        private void Execut(int MemberID, string OpenID, string ImgName)
+        {
+            logger.Trace("获取到参数：MemberID=" + MemberID + ",OpenID=" + OpenID + ",ImgName=" + ImgName + "");
+            logger.Trace("开始执行异步啊");
+            for (int i = 0; i < 10; i++)
+            {
+                logger.Trace("异步已经完成：" + (i + 1) * 10 + "%");
+                Thread.Sleep(1000);
+            }
+            logger.Trace("异步完成了");
         }
 
     }
