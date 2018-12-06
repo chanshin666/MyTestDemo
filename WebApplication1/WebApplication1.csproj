@@ -19,6 +19,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -203,6 +204,7 @@
     <Content Include="Images\24.jpg" />
     <Content Include="Images\25.jpg" />
     <Content Include="Images\26.jpg" />
+    <Content Include="CryptoJSEncrypt.aspx" />
     <Content Include="JsonToBase64.aspx" />
     <Content Include="JXNULoginTest.aspx" />
     <Content Include="O2SComponentsPDF.aspx" />
@@ -217,6 +219,7 @@
     <Content Include="Scripts\amazeui.js" />
     <Content Include="Scripts\amazeui.min.js" />
     <Content Include="Scripts\BeginInvoke.js" />
+    <Content Include="Scripts\crypto-js.js" />
     <Content Include="Scripts\echarts-gl.js" />
     <Content Include="Scripts\echarts-gl.min.js" />
     <Content Include="Scripts\echarts.min.js" />
@@ -500,6 +503,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="CryptoJSEncrypt.aspx.cs">
+      <DependentUpon>CryptoJSEncrypt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CryptoJSEncrypt.aspx.designer.cs">
+      <DependentUpon>CryptoJSEncrypt.aspx</DependentUpon>
     </Compile>
     <Compile Include="JsonToBase64.aspx.cs">
       <DependentUpon>JsonToBase64.aspx</DependentUpon>
