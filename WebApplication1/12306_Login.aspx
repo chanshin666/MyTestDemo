@@ -17,12 +17,33 @@
             //        $('#CodeImg').append(data);
             //    }
             //});
-            var srcUrl = 'ajax.ashx?action=GetValidateImg'
-            $.get(srcUrl, function (data) {
-                //alert(data);
-                var imgWindow = $("#CodeImg").html("<img src=" + data + ">");//接收Base64字符串，并转换为图片显示
-                $('#CodeImg').append(imgWindow);
-            })
+
+            //var srcUrl = 'ajax.ashx?action=GetValidateImg'
+            //$.get(srcUrl, function (data) {
+            //    // console.log(data);
+            //    $("#CPic").attr('src',data);
+            //    //var imgWindow = $("#CodeImg").html("<img src='" + data + "'>");//接收Base64字符串，并转换为图片显示
+            //    //$('#CodeImg').append(imgWindow);
+            //})
+
+            var xmlhttp;
+            xmlhttp=new XMLHttpRequest();
+            xmlhttp.open("GET", "ajax.ashx?action=GetValidateImg", true);
+            xmlhttp.responseType = "blob";
+            xmlhttp.onload = function(){
+                console.log(this);
+                if (this.status == 200) {
+                    var blob = this.response;
+                    var img = document.createElement("img");
+                    img.onload = function(e) {
+                        window.URL.revokeObjectURL(img.src); 
+                    };
+                    img.src = window.URL.createObjectURL(blob);
+                    document.getElementById("CodeImg").appendChild(img);
+                }
+            }
+            xmlhttp.send();
+
         });
     </script>
     <style>
@@ -37,6 +58,12 @@
             height:100px;
             margin:5% auto;
             /*background-color:red;*/
+        }
+        #btnLogin{
+            margin-top:15%;
+            width:100%;
+            line-height:30px;
+            font-size:16px;
         }
     </style>
 </head>
@@ -55,10 +82,10 @@
     </div>
 
     <div id="CodeImg">
-     
+        
     </div>
 
-    <button type="submit" class="am-btn am-btn-primary">登录</button>
+    <button type="submit" class="am-btn am-btn-primary" id="btnLogin">登录</button>
   </fieldset>
 </div>
 </form>

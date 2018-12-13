@@ -1,5 +1,7 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -14,6 +16,7 @@ namespace WebApplication1
 {
     public partial class _12306_Login : System.Web.UI.Page
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger(); //初始化日志类
         CookieContainer cookie;
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,6 +44,7 @@ namespace WebApplication1
             WebResponse webres = webreq.GetResponse();
 
             Stream stream = webres.GetResponseStream();
+
             if (stream != null)
             {
                 List<byte> bytes = new List<byte>();
@@ -50,7 +54,6 @@ namespace WebApplication1
                     bytes.Add((byte)i);
                     i = stream.ReadByte();
                 }
-
                 Response.Clear();
                 Response.ContentType = "image/jpeg";
                 Response.BinaryWrite(bytes.ToArray());
@@ -202,6 +205,6 @@ namespace WebApplication1
                 return ex.Message;
             }
         }
-
+        
     }
 }

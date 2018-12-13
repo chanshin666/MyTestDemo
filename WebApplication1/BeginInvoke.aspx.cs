@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -17,7 +18,7 @@ namespace WebApplication1
         {
             if (!IsPostBack)
             {
-                string Action = Utils.ReqStrParams("action","");
+                string Action = Request.QueryString["action"] == "" ? "" : Request.QueryString["action"];
                 if (Action != "")
                 {
                     switch (Action)
@@ -42,24 +43,30 @@ namespace WebApplication1
 
         private void ASyncInvoke()
         {
+            for (int i = 0; i < 3; i++)
+            {
+                if (i == 2)
+                {
+                    Action<int, string, string> action = Execut;
+                    IAsyncResult iResult = action.BeginInvoke(i, "sfndlasgnfdklsgjmds", "1.jpg", (callback) => { logger.Trace("上传完成了"); action.EndInvoke(callback); }, null);
+                }
+            }
 
-            Action<int, string, string> action = Execut;
-            IAsyncResult iResult = action.BeginInvoke(100, "sfndlasgnfdklsgjmds", "1.jpg", (callback) => { logger.Trace("上传完成了"); action.EndInvoke(callback); }, null);
 
-            Response.Write("{\"Msg\":\"" + DateTime.Now.ToString() + " 按钮已经执行完毕\"}");
-            Response.End();
+            HttpContext.Current.Response.Write("{\"Msg\":\"" + DateTime.Now.ToString() + " 按钮已经执行完毕\"}");
+            HttpContext.Current.Response.End();
         }
 
         private void Execut(int MemberID, string OpenID, string ImgName)
         {
             logger.Trace("获取到参数：MemberID=" + MemberID + ",OpenID=" + OpenID + ",ImgName=" + ImgName + "");
-            logger.Trace("开始执行异步啊");
+            logger.Trace("【"+ MemberID + "】开始执行异步啊");
             for (int i = 0; i < 10; i++)
             {
-                logger.Trace("异步已经完成：" + (i + 1) * 10 + "%");
+                logger.Trace("【" + MemberID + "】异步已经完成：" + (i + 1) * 10 + "%");
                 Thread.Sleep(1000);
             }
-            logger.Trace("异步完成了");
+            logger.Trace("【" + MemberID + "】异步完成了");
         }
 
     }

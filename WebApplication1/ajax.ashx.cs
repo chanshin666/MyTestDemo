@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 
 namespace WebApplication1
@@ -63,10 +64,10 @@ namespace WebApplication1
                     bytes.Add((byte)i);
                     i = stream.ReadByte();
                 }
-
                 context.Response.Clear();
                 context.Response.ContentType = "image/jpeg";
                 context.Response.BinaryWrite(bytes.ToArray());
+                //context.Response.End();
             }
             #endregion
         }
@@ -74,8 +75,23 @@ namespace WebApplication1
         private void ASyncInvoke()
         {
 
-            Action<int, string, string> action = Execut;
-            IAsyncResult iResult = action.BeginInvoke(100, "sfndlasgnfdklsgjmds", "1.jpg", (callback) => { logger.Trace("上传完成了"); action.EndInvoke(callback); }, null);
+            //TaskFactory task = Task.Factory;
+            //List<Task> TaskList = new List<Task>();
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    TaskList.Add(task.StartNew(() => this.Execut(i, "sfndlasgnfdklsgjmds", "1.jpg")));
+            //}
+            //task.ContinueWhenAny(TaskList.ToArray(), (t) => { logger.Trace("付款通知短信有完成的了"); });
+
+            for (int i = 0; i < 3; i++)
+            {
+                if (i == 2)
+                {
+                    Action<int, string, string> action = Execut;
+                    IAsyncResult iResult = action.BeginInvoke(i, "sfndlasgnfdklsgjmds", "1.jpg", (callback) => { logger.Trace("上传完成了"); action.EndInvoke(callback); }, null);
+                }
+            }
+            
 
             HttpContext.Current.Response.Write("{\"Msg\":\"" + DateTime.Now.ToString() + " 按钮已经执行完毕\"}");
             HttpContext.Current.Response.End();
@@ -84,13 +100,13 @@ namespace WebApplication1
         private void Execut(int MemberID, string OpenID, string ImgName)
         {
             logger.Trace("获取到参数：MemberID=" + MemberID + ",OpenID=" + OpenID + ",ImgName=" + ImgName + "");
-            logger.Trace("开始执行异步啊");
+            logger.Trace("【" + MemberID + "】开始执行异步啊");
             for (int i = 0; i < 10; i++)
             {
-                logger.Trace("异步已经完成：" + (i + 1) * 10 + "%");
+                logger.Trace("【" + MemberID + "】异步已经完成：" + (i + 1) * 10 + "%");
                 Thread.Sleep(1000);
             }
-            logger.Trace("异步完成了");
+            logger.Trace("【" + MemberID + "】异步完成了");
         }
 
     }
