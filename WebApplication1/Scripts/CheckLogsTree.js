@@ -158,6 +158,12 @@ $(function () {
 
     initZTree();
     
+    $('#Refresh').click(function () {
+        $('#Logs').html('正在刷新，请稍后...');
+        initZTree();
+        $('#Logs').html('请选择在左侧菜单选择具体日志文件');
+    });
+
     //zTreeObj = $.fn.zTree.init($("#LogsTree"), setting, zNodes);//如果一开始就异步的话，第三个参数为null就行；
 })
 

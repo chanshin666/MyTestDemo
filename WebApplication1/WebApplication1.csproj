@@ -223,6 +223,7 @@
     <Content Include="Images\25.jpg" />
     <Content Include="Images\26.jpg" />
     <Content Include="CryptoJSEncrypt.aspx" />
+    <Content Include="Images\刷新.png" />
     <Content Include="JsonToBase64.aspx" />
     <Content Include="JXNULoginTest.aspx" />
     <Content Include="O2SComponentsPDF.aspx" />
