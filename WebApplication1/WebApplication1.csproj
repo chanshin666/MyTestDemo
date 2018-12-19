@@ -186,12 +186,30 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="BeginInvoke.aspx" />
+    <Content Include="CheckLogs.aspx" />
+    <Content Include="CheckLogsTree.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\amazeui.css" />
     <Content Include="Content\amazeui.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\ZTreeDemo.css" />
+    <Content Include="Content\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="Content\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="Content\zTreeStyle\img\diy\2.png" />
+    <Content Include="Content\zTreeStyle\img\diy\3.png" />
+    <Content Include="Content\zTreeStyle\img\diy\4.png" />
+    <Content Include="Content\zTreeStyle\img\diy\5.png" />
+    <Content Include="Content\zTreeStyle\img\diy\6.png" />
+    <Content Include="Content\zTreeStyle\img\diy\7.png" />
+    <Content Include="Content\zTreeStyle\img\diy\8.png" />
+    <Content Include="Content\zTreeStyle\img\diy\9.png" />
+    <Content Include="Content\zTreeStyle\img\line_conn.gif" />
+    <Content Include="Content\zTreeStyle\img\loading.gif" />
+    <Content Include="Content\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="Content\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="Content\zTreeStyle\zTreeStyle.css" />
     <Content Include="DragTable.aspx" />
     <Content Include="DrawingPngImage.aspx" />
     <Content Include="DrawingTest.aspx" />
@@ -219,12 +237,21 @@
     <Content Include="Scripts\amazeui.js" />
     <Content Include="Scripts\amazeui.min.js" />
     <Content Include="Scripts\BeginInvoke.js" />
+    <Content Include="Scripts\CheckLogs.js" />
+    <Content Include="Scripts\CheckLogsTree.js" />
     <Content Include="Scripts\crypto-js.js" />
     <Content Include="Scripts\echarts-gl.js" />
     <Content Include="Scripts\echarts-gl.min.js" />
     <Content Include="Scripts\echarts.min.js" />
     <Content Include="Scripts\html2canvas.js" />
+    <Content Include="Scripts\jquery-1.4.4.min.js" />
     <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery.grumble.min.js" />
+    <Content Include="Scripts\jquery.livequery.js" />
+    <Content Include="Scripts\jquery.livequery.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.ztree.core.js" />
+    <Content Include="Scripts\jquery.ztree.exedit.js" />
     <Content Include="Scripts\layer\layer.js" />
     <Content Include="Scripts\layer\skin\default\icon-ext.png" />
     <Content Include="Scripts\layer\skin\default\icon.png" />
@@ -431,6 +458,20 @@
     <Compile Include="BeginInvoke.aspx.designer.cs">
       <DependentUpon>BeginInvoke.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CheckLogs.aspx.cs">
+      <DependentUpon>CheckLogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckLogs.aspx.designer.cs">
+      <DependentUpon>CheckLogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckLogsTree.aspx.cs">
+      <DependentUpon>CheckLogsTree.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckLogsTree.aspx.designer.cs">
+      <DependentUpon>CheckLogsTree.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -525,6 +566,8 @@
     <Compile Include="JXNULoginTest.aspx.designer.cs">
       <DependentUpon>JXNULoginTest.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\FileInfo.cs" />
+    <Compile Include="Models\FileInfoTree.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ImgUploadRes.cs" />
     <Compile Include="Models\Users.cs" />
