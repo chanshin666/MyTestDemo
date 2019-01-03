@@ -10,6 +10,7 @@
 <body>
     <form runat="server" id="form1">
        <%-- <asp:Button ID="Button1" runat="server" Text="转化" OnClick="Button1_Click" />--%>
+        <h1><%=DateTime.Now.ToString("yyyyMMddHHmmssfff") %></h1>
     </form>
 </body>
 

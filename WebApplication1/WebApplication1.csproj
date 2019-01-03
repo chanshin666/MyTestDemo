@@ -638,6 +638,7 @@
     <Compile Include="UserXml.aspx.designer.cs">
       <DependentUpon>UserXml.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Utility\RandomHelper.cs" />
     <Compile Include="Utility\WebHelper.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
