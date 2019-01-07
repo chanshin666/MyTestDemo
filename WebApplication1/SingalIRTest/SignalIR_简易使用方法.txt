@@ -1,0 +1,13 @@
+1. 通过NuGet包管理或者NuGet控制台安装Microsoft.AspNet.SignalR：
+	NuGet控制台安装Microsoft.AspNet.SignalR：Install-Package Microsoft.AspNet.SignalR
+
+2. 根目录下的 Startup.cs 中Startup类中的Configuration()方法注册SignalIR：
+	app.MapSignalR();
+
+3. 新建SignalIR集线器类，继承Hub：
+	注意：类名上面不加 [HubName("")] 特性，那么客户端初始化的对象名称会默认使用 驼峰命名法（首字母小写）
+
+4. 前端页面引用jquery和jquery.signalR，jquery必须在jquery.signalR之前引用
+
+5. 简易聊天室 参考 ChatRoom.aspx
+   模拟后台实时获取新订单  参考 OrderMake.aspx和OrderManage.aspx
