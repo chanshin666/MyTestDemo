@@ -10,10 +10,36 @@ namespace WebApplication1
 {
     public partial class example2 : System.Web.UI.Page
     {
+        public int Finace = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             //Response.Write(GetMD5("bomen" + GetMD5("gqd1xp9h")));
-            Response.Write(Parsejson());
+            //Response.Write(Parsejson());
+
+            Finace = GetFinace(Finace);
+
+        }
+        
+        private int GetFinace(int Finace, bool IsResend = false)
+        {
+            Response.Write("Result 初始化<br />");
+            bool IsGoon = false;
+            Finace = 2;
+            Response.Write("Result = 2，IsResend="+ IsResend + "<br />");
+            if (IsResend)
+            {
+                Response.Write("进入 IsResend判断，Result = 4 <br />");
+                Finace = 4;
+            }
+            if(Finace == 2)
+            {
+                Response.Write("Result =2 开始重新请求 <br />");
+                Finace=GetFinace(Finace, true);
+                IsGoon = true;
+            }
+            Response.Write("返回结果Result = " + Finace + "<br />");
+            Response.Write("返回结果IsGoon = " + IsGoon + "<br />");
+            return Finace;
         }
 
         protected void Button1_Click(object sender, EventArgs e)
