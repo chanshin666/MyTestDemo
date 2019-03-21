@@ -40,6 +40,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>ImportDLL\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.4.0\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
@@ -206,6 +209,7 @@
     <Content Include="BeginInvoke.aspx" />
     <Content Include="CheckLogs.aspx" />
     <Content Include="CheckLogsTree.aspx" />
+    <Content Include="ComposeImage.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\amazeui.css" />
     <Content Include="Content\amazeui.min.css" />
@@ -695,6 +699,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="PngOverImage.aspx" />
+    <Content Include="ReadCert.aspx" />
     <Content Include="RedisDemo.aspx" />
     <Content Include="ReferenceLine.aspx" />
     <Content Include="Scripts\12306.js" />
@@ -945,6 +950,13 @@
     <Compile Include="CheckLogsTree.aspx.designer.cs">
       <DependentUpon>CheckLogsTree.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ComposeImage.aspx.cs">
+      <DependentUpon>ComposeImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ComposeImage.aspx.designer.cs">
+      <DependentUpon>ComposeImage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1067,6 +1079,13 @@
       <DependentUpon>PngOverImage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadCert.aspx.cs">
+      <DependentUpon>ReadCert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReadCert.aspx.designer.cs">
+      <DependentUpon>ReadCert.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RedisDemo.aspx.cs">
       <DependentUpon>RedisDemo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
