@@ -692,6 +692,7 @@
     <Content Include="JsonToBase64.aspx" />
     <Content Include="JXNULoginTest.aspx" />
     <Content Include="Make500Error.aspx" />
+    <Content Include="NLogTest.aspx" />
     <Content Include="O2SComponentsPDF.aspx" />
     <Content Include="packages.config" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -1064,6 +1065,13 @@
     <Compile Include="Models\ImgUploadRes.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="NetLog.cs" />
+    <Compile Include="NLogTest.aspx.cs">
+      <DependentUpon>NLogTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NLogTest.aspx.designer.cs">
+      <DependentUpon>NLogTest.aspx</DependentUpon>
+    </Compile>
     <Compile Include="O2SComponentsPDF.aspx.cs">
       <DependentUpon>O2SComponentsPDF.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
