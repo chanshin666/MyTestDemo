@@ -1195,6 +1195,7 @@
     <Compile Include="Utility\RandomHelper.cs" />
     <Compile Include="Utility\RedisUtils.cs" />
     <Compile Include="Utility\WebHelper.cs" />
+    <Compile Include="Utility\ZipHelper.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
