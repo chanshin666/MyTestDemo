@@ -20,6 +20,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,9 +57,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\NLog.dll</HintPath>
+    <Reference Include="NLog">
+      <HintPath>ImportDLL\NLog.dll</HintPath>
     </Reference>
     <Reference Include="O2S.Components.PDFRender4NET">
       <HintPath>ImportDLL\O2S.Components.PDFRender4NET.dll</HintPath>
@@ -128,9 +128,8 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ImportDLL\XpShop.Client.dll</HintPath>
     </Reference>
-    <Reference Include="XpShop.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\XpShop.Common.dll</HintPath>
+    <Reference Include="XpShop.Common">
+      <HintPath>ImportDLL\XpShop.Common.dll</HintPath>
     </Reference>
     <Reference Include="XpShop.Service, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -689,6 +688,23 @@
     <Content Include="Images\26.jpg" />
     <Content Include="CryptoJSEncrypt.aspx" />
     <Content Include="Images\刷新.png" />
+    <Content Include="ImportDLL\aliyun-net-sdk-core.dll" />
+    <Content Include="ImportDLL\aliyun-net-sdk-dysmsapi.dll" />
+    <Content Include="ImportDLL\BouncyCastle.Crypto.dll" />
+    <Content Include="ImportDLL\Kingdee.BOS.WebApi.Client.dll" />
+    <Content Include="ImportDLL\Microsoft.AspNet.SignalR.Core.dll" />
+    <Content Include="ImportDLL\Microsoft.AspNet.SignalR.Owin.dll" />
+    <Content Include="ImportDLL\Microsoft.AspNet.SignalR.SystemWeb.dll" />
+    <Content Include="ImportDLL\Microsoft.Owin.Host.SystemWeb.dll" />
+    <Content Include="ImportDLL\Newtonsoft.Json.dll" />
+    <Content Include="ImportDLL\NLog.dll" />
+    <Content Include="ImportDLL\O2S.Components.PDFRender4NET.dll" />
+    <Content Include="ImportDLL\ServiceStack.dll" />
+    <Content Include="ImportDLL\ServiceStack.Interfaces.dll" />
+    <Content Include="ImportDLL\ServiceStack.ServiceInterface.dll" />
+    <Content Include="ImportDLL\XpShop.Client.dll" />
+    <Content Include="ImportDLL\XpShop.Common.dll" />
+    <Content Include="ImportDLL\XpShop.Service.dll" />
     <Content Include="JsonToBase64.aspx" />
     <Content Include="JXNULoginTest.aspx" />
     <Content Include="Make500Error.aspx" />
@@ -746,6 +762,7 @@
     <Content Include="ajax.ashx" />
     <Content Include="Content\themes\material-teal\images\Thumbs.db" />
     <Content Include="Content\themes\material\images\Thumbs.db" />
+    <Content Include="ZipTest.aspx" />
     <None Include="Properties\PublishProfiles\WebConfig.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -1193,6 +1210,13 @@
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebSiteThumbnail.cs" />
+    <Compile Include="ZipTest.aspx.cs">
+      <DependentUpon>ZipTest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ZipTest.aspx.designer.cs">
+      <DependentUpon>ZipTest.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
